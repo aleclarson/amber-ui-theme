@@ -1,0 +1,93 @@
+// Colors
+// This defines all syntax variables that syntax themes must implement when they
+// include a syntax-variables.less file.
+
+@text-color: #FEC328;
+@text-color-subtle: darken(desaturate(@text-color, 25%), 25%);
+@text-color-highlight: darken(@text-color, 10%);
+@text-color-selected: #372C12;
+
+@text-color-info: #5293d8;
+@text-color-success: #2BDA77;
+@text-color-warning: #ff982d;
+@text-color-error: #c00;
+
+@text-color-ignored: @text-color-subtle;
+@text-color-added: #FDCC5B;
+@text-color-renamed: @text-color-info;
+@text-color-modified: @text-color-warning;
+@text-color-removed: @text-color-error;
+
+@background-color-info: #0098ff;
+@background-color-success: #17ca65;
+@background-color-warning: #ffaa2c;
+@background-color-error: #c00;
+@background-color-highlight: rgba(255, 255, 255, 0.07);
+@background-color-selected: #372C12;
+
+@app-background-color: #1D1B16;
+
+@base-background-color: lighten(@tool-panel-background-color, 5%);
+@base-border-color: rgba(0, 0, 0, 0.5);
+
+@pane-item-background-color: @app-background-color;
+@pane-item-border-color: rgba(0, 0, 0, 0.5);
+
+@input-background-color: darken(@app-background-color, 2%);
+@input-border-color: darken(@app-background-color, 5%);
+
+@tool-panel-background-color: @app-background-color;
+@tool-panel-border-color: @base-border-color;
+
+@inset-panel-background-color: @app-background-color;
+@inset-panel-border-color: @base-border-color;
+
+@panel-heading-background-color: @app-background-color;
+@panel-heading-border-color: fadein(@base-border-color, 10%);
+
+@overlay-background-color: @app-background-color;
+@overlay-border-color: @background-color-highlight;
+
+@button-background-color: #2E2A22;
+@button-background-color-hover: lighten(@button-background-color, 5%);
+@button-background-color-selected: #5c6064;
+@button-border-color: @base-border-color;
+
+@tab-bar-background-color: @app-background-color;
+@tab-bar-border-color: #fff; // darken(@tab-background-color-active, 10%);
+@tab-background-color: #333;
+@tab-background-color-active: #222;
+@tab-border-color: #fff; // 484848;
+
+@tree-view-background-color: @app-background-color;
+@tree-view-border-color: @tool-panel-border-color;
+
+@scrollbar-background-color: #222425; // Needs to be opaque -> atom/atom/issues/4578
+@scrollbar-color: rgba(92, 92, 92, 0.5);
+
+@ui-site-color-1: @background-color-success; // green
+@ui-site-color-2: @background-color-info; // blue
+@ui-site-color-3: @background-color-warning; // orange
+@ui-site-color-4: #db2ff4; // purple
+@ui-site-color-5: #f5e11d; // yellow
+
+
+// Sizes
+
+@font-size: 11px;
+@input-font-size: 14px;
+
+@disclosure-arrow-size: 12px;
+
+@component-padding: 10px;
+@component-icon-padding: 5px;
+@component-icon-size: 16px;
+@component-line-height: 25px;
+@component-border-radius: 2px;
+
+@tab-height: 26px;
+
+
+// Other
+
+@font-family: 'BlinkMacSystemFont', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;

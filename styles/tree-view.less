@@ -1,0 +1,57 @@
+@import "ui-variables";
+
+.tree-view {
+  font-size: @font-size;
+  background: @tree-view-background-color;
+
+  .selected:before {
+    background: #372C12;
+    box-shadow: inset -3px 0 0 rgba(0,0,0, .05);
+  }
+
+  & .list-item {
+    opacity: 0.28;
+
+    &.selected {
+      opacity: 0.84;
+    }
+  }
+
+  &:hover .list-item {
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.selected {
+      opacity: 1;
+    }
+  }
+}
+
+.tree-view-resizer {
+  .tree-view-resize-handle {
+    width: 8px;
+  }
+}
+
+.focusable-panel {
+  // opacity: 1;
+  // box-shadow: inset -3px 0 0 rgba(0,0,0, .05);
+
+  &:focus {
+    background: @app-background-color;
+
+    .selected:before {
+      background: @background-color-selected;
+    }
+  }
+}
+
+[data-show-on-right-side=true] {
+  .tree-view .selected:before,
+  .focusable-panel {
+    box-shadow: inset 3px 0 0 rgba(0,0,0, .05);
+  }
+}

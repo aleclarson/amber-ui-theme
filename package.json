@@ -1,0 +1,8 @@
+{
+  "name": "amber-ui-theme",
+  "theme": "ui",
+  "version": "1.0.0",
+  "engines": {
+    "atom": ">0.40.0"
+  }
+}

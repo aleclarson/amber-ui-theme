@@ -1,0 +1,162 @@
+@import "ui-variables";
+@tab-radius: 3px;
+@modified-icon-width: 8px;
+@tab-skew: 30deg;
+@tab-top-padding: 5px;
+@tab-bottom-border-height: 5px;
+@tab-border: 1px solid @tab-border-color;
+@tab-bar-bottom-border-color: #111;
+@tab-max-width: 160px;
+
+.tab-bar {
+  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  background: @tab-bar-background-color;
+  padding: 0 5px 0 40px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: @tab-bottom-border-height;
+    left: 0;
+    right: 0;
+    border: none;
+    pointer-events: none;
+    background-color: @app-background-color;
+  }
+
+  &:hover .tab {
+    opacity: 1;
+  }
+
+  .tab {
+    opacity: 0.6;
+    position: relative;
+    top: @tab-top-padding;
+    // max-width: @tab-max-width;
+    height: @tab-height;
+    line-height: @tab-height;
+    padding: 0 8px 0 8px;
+    margin: 0 5px 0 5px;
+    font-weight: 500;
+
+    border: none;
+    border-radius: 4px;
+    background-image: none;
+    box-shadow: none;
+
+    transition: color .1s ease-in;
+
+    &:before, &:after {
+      border-radius: 0px;
+      background-image: none;
+      box-shadow: none;
+      height: @tab-height;
+      width: 0;
+    }
+
+    .title {
+      position: relative;
+      z-index: 1;
+      color: @text-color-subtle;
+      margin-top: -@tab-top-padding;
+      padding-top: @tab-top-padding + 1;
+      margin-right: 7px;
+    }
+
+    .close-icon {
+      opacity: 0;
+      right: 0px;
+      z-index: 3;
+      text-align: right;
+      line-height: @tab-height;
+      margin: 0px;
+      color: @text-color;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+      .title {
+        color: @text-color;
+      }
+      .close-icon {
+        opacity: 1;
+        color: inherit;
+      }
+    }
+
+    &.modified {
+
+      .title, .close-icon {
+        color: #407FD6;
+      }
+
+      &:hover {
+        .title, .close-icon {
+          color: #4090FF;
+        }
+      }
+
+      &.active {
+        background-color: #4C98FF;
+
+        .title, .close-icon {
+          color: @app-background-color;
+        }
+
+        .close-icon {
+          opacity: 0.25;
+          border-color: @app-background-color;
+          margin: 0 0px 0 0;
+        }
+      }
+    }
+  }
+
+  .tab.active {
+    opacity: 1;
+    z-index: 1;
+    color: @text-color;
+    background-image: none;
+    background-color: @background-color-selected; // desaturate(@text-color, 10%);
+
+    .close-icon {
+      opacity: 0.15;
+      color: @text-color;
+      margin: 0 9px 0 0;
+    }
+
+    .title {
+      color: @text-color;
+      margin-right: 7px;
+    }
+
+    &:hover {
+      .title {
+        color: inherit;
+      }
+      .close-icon {
+        opacity: 1;
+        color: inherit;
+      }
+    }
+  }
+
+  .placeholder {
+    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    margin-left: -9px; // center between tabs
+    pointer-events: none;
+    &:after {
+      top: @tab-height + @tab-top-padding + @tab-bottom-border-height - 2px;
+    }
+  }
+}
