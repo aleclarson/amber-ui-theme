@@ -8,27 +8,8 @@ atom-workspace {
   background-color: @app-background-color;
 }
 
-.settings-view {
-	.section {
-		background-color: @app-background-color;
-	}
-	.config-menu {
-		background-color: @app-background-color;
-
-		.nav > li {
-
-			&.active > a {
-				background-color: @background-color-selected;
-			}
-
-			&:hover > a {
-				background-color: darken(@background-color-selected, 3%);
-			}
-		}
-	}
-	.form-control {
-		background-color: @app-background-color;
-	}
+background-tips > ul.background-message {
+	color: @text-color-subtle;
 }
 
 .scrollbars-visible-always {
@@ -47,4 +28,15 @@ atom-workspace {
     border-radius: 5px;
     box-shadow: 0 0 1px black inset;
   }
+}
+
+atom-text-editor::shadow atom-text-editor-minimap::shadow {
+
+	.minimap-visible-area {
+
+		&::after {
+			opacity: 0.3;
+			background: lighten(@background-color-selected, 10%);
+		}
+	}
 }

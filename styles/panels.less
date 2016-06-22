@@ -47,11 +47,12 @@ atom-panel, .tool-panel {
 .panel-heading {
   .text(normal);
 
-  border-bottom: 1px solid @panel-heading-border-color;
-  border-top: 1px solid fadein(@background-color-highlight, 10%);
+  border: none;
+  // border-bottom: 1px solid @panel-heading-border-color;
+  // border-top: 1px solid fadein(@background-color-highlight, 10%);
 
   background-color: transparent;
-  background-image: -webkit-linear-gradient(@app-background-color, darken(@app-background-color, 10%));
+  background-image: none; // -webkit-linear-gradient(@app-background-color, darken(@app-background-color, 10%));
 
   .btn {
     padding-left: 8px;

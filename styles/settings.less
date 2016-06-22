@@ -1,0 +1,42 @@
+@import "ui-variables";
+
+.settings-view {
+
+	.section {
+		background-color: @app-background-color;
+	}
+
+	.config-menu {
+		background-color: @app-background-color;
+
+		.nav > li {
+
+			&.active > a {
+				background-color: @background-color-selected;
+			}
+
+			&:hover > a {
+				background-color: darken(@background-color-selected, 3%);
+			}
+		}
+	}
+
+  .form-control {
+		background-color: @app-background-color;
+	}
+
+  .package-card {
+		color: @text-color-subtle;
+    background-color: lighten(@app-background-color, 1%);
+
+		&:hover {
+			background-color: lighten(@app-background-color, 2%);
+		}
+  }
+
+  .section atom-text-editor[mini] {
+		&, &::shadow {
+	    opacity: 1;
+		}
+  }
+}

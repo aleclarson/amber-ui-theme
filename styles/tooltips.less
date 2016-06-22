@@ -1,8 +1,10 @@
 @import "ui-variables";
 
 .tooltip {
-  @tip-background-color: desaturate(@text-color, 10%);
-  @tip-text-color: @app-background-color;
+  @tip-background-color: @background-color-modified;
+  @tip-text-color: @text-color-modified;
+  // @tip-background-color: desaturate(@text-color, 10%);
+  // @tip-text-color: @app-background-color;
   white-space: nowrap;
 
   .keystroke {
@@ -16,11 +18,13 @@
 
   .tooltip-inner {
     line-height: 19px;
-    border-radius: @component-border-radius;
+    border-radius: 4px;
     background-color: @tip-background-color;
     color: @tip-text-color;
     white-space: nowrap;
     max-width: none;
+    padding: 3px 8px 4px 8px;
+    margin: 0 10px;
   }
 
   &.top .tooltip-arrow {

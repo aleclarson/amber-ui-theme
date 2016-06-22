@@ -1,24 +1,46 @@
 @import "ui-variables";
 
 .tree-view {
-  font-size: @font-size;
+  font-size: 12px;
   background: @tree-view-background-color;
+  padding: 5px 0 5px 5px;
 
-  .selected:before {
-    background: #372C12;
-    box-shadow: inset -3px 0 0 rgba(0,0,0, .05);
+  .selected {
+    color: @text-color;
+    background-color: @background-color-selected;
+
   }
 
-  & .list-item {
-    opacity: 0.28;
+  .list-tree .list-item {
+    opacity: 0.2;
 
     &.selected {
-      opacity: 0.84;
+      opacity: 0.9;
+      background-color: @background-color-selected;
+      border-radius: 4px;
+      margin-right: 5px;
+
+      &.status-modified {
+        color: @text-color-modified;
+        background-color: @background-color-modified;
+
+        & > .name {
+          color: inherit;
+        }
+      }
+
+      &:before {
+        background: none;
+      }
+    }
+
+    &:before {
+      background: none;
     }
   }
 
   &:hover .list-item {
-    opacity: 0.8;
+    opacity: 0.6;
 
     &:hover {
       opacity: 1;

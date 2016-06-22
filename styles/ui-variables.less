@@ -2,30 +2,31 @@
 // This defines all syntax variables that syntax themes must implement when they
 // include a syntax-variables.less file.
 
-@text-color: #FEC328;
+@app-background-color: #191813;
+
+@text-color: #F2C830;
 @text-color-subtle: darken(desaturate(@text-color, 25%), 25%);
 @text-color-highlight: darken(@text-color, 10%);
-@text-color-selected: #372C12;
+@text-color-selected: lighten(@text-color, 15%);
 
-@text-color-info: #5293d8;
-@text-color-success: #2BDA77;
-@text-color-warning: #ff982d;
-@text-color-error: #c00;
+@text-color-info: #fff;
+@text-color-success: #fff;
+@text-color-warning: #fff;
+@text-color-error: #fff;
 
-@text-color-ignored: @text-color-subtle;
+@text-color-ignored: #fff;
 @text-color-added: #FDCC5B;
-@text-color-renamed: @text-color-info;
-@text-color-modified: @text-color-warning;
-@text-color-removed: @text-color-error;
+@text-color-renamed: #fff;
+@text-color-modified: #66A4FF;
+@text-color-removed: #fff;
 
-@background-color-info: #0098ff;
-@background-color-success: #17ca65;
-@background-color-warning: #ffaa2c;
-@background-color-error: #c00;
+@background-color-info: #fff;
+@background-color-success: #fff;
+@background-color-warning: #fff;
+@background-color-error: #fff;
 @background-color-highlight: rgba(255, 255, 255, 0.07);
 @background-color-selected: #372C12;
-
-@app-background-color: #1D1B16;
+@background-color-modified: #263D5E;
 
 @base-background-color: lighten(@tool-panel-background-color, 5%);
 @base-border-color: rgba(0, 0, 0, 0.5);
@@ -34,7 +35,6 @@
 @pane-item-border-color: rgba(0, 0, 0, 0.5);
 
 @input-background-color: darken(@app-background-color, 2%);
-@input-border-color: darken(@app-background-color, 5%);
 
 @tool-panel-background-color: @app-background-color;
 @tool-panel-border-color: @base-border-color;
