@@ -1,40 +1,57 @@
 @import "ui-variables";
 
 .tree-view {
-  font-size: 12px;
+  font-size: @font-size;
   background: @tree-view-background-color;
-  padding: 5px 0 5px 5px;
+  padding: 15px 0 5px 15px;
 
-  .selected {
-    color: @text-color;
-    background-color: @background-color-selected;
+  // HACK: Overrides a default thin black shadow.
+  box-shadow: none;
 
+  .list-item {
+    opacity: 0.2;
   }
 
-  .list-tree .list-item {
-    opacity: 0.2;
+  .entry {
+
+    &.file, &.directory > .header {
+      padding: 0 10px;
+      line-height: 24px;
+    }
+
+    &.directory > .header::before {
+      background-color: transparent;
+    }
 
     &.selected {
-      opacity: 0.9;
-      background-color: @background-color-selected;
-      border-radius: 4px;
-      margin-right: 5px;
+
+      &.file, &.directory > .header {
+        opacity: 0.9;
+        color: @text-color;
+        background-color: @background-color-selected;
+        border-radius: 4px;
+        margin-right: 5px;
+        margin-top: 0px;
+      }
 
       &.status-modified {
-        color: @text-color-modified;
-        background-color: @background-color-modified;
+
+        &.file, &.directory > .header {
+          color: @text-color-modified;
+          background-color: @background-color-modified;
+        }
 
         & > .name {
           color: inherit;
         }
       }
 
-      &:before {
+      &::before {
         background: none;
       }
     }
 
-    &:before {
+    &::before {
       background: none;
     }
   }
@@ -52,28 +69,13 @@
   }
 }
 
-.tree-view-resizer {
-  .tree-view-resize-handle {
-    width: 8px;
-  }
-}
+.tree-view-resizer .tree-view-resize-handle {
+  opacity: 0;
+  background-color: darken(@app-background-color, 5%);
+  width: 12px;
+  transition: opacity .2s ease-out;
 
-.focusable-panel {
-  // opacity: 1;
-  // box-shadow: inset -3px 0 0 rgba(0,0,0, .05);
-
-  &:focus {
-    background: @app-background-color;
-
-    .selected:before {
-      background: @background-color-selected;
-    }
-  }
-}
-
-[data-show-on-right-side=true] {
-  .tree-view .selected:before,
-  .focusable-panel {
-    box-shadow: inset 3px 0 0 rgba(0,0,0, .05);
+  &:hover, &:active {
+    opacity: 0.15;
   }
 }

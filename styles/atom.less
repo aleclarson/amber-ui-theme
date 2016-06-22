@@ -8,6 +8,43 @@ atom-workspace {
   background-color: @app-background-color;
 }
 
+atom-notifications {
+
+	atom-notification.error {
+
+		&.icon::before {
+			background: @text-color-error;
+		}
+
+		.detail {
+			background: darken(white, 8%);
+
+			.detail-content {
+				color: darken(white, 55%);
+			}
+		}
+
+		.content {
+			background-color: darken(white, 12%);
+
+			.message p {
+				color: black;
+				font-size: 13px;
+				font-weight: 600;
+				text-shadow: none;
+			}
+
+			.message code {
+				padding: 3px 6px;
+				color: darken(@text-color-error, 15%);
+				background: lighten(@text-color-error, 20%);
+				text-shadow: none;
+				border-radius: @button-radius;
+			}
+		}
+	}
+}
+
 background-tips > ul.background-message {
 	color: @text-color-subtle;
 }

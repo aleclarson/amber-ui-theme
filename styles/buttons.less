@@ -31,8 +31,39 @@
 }
 
 .btn {
-  color: #FDCC5B;
-  .btn-background(@button-background-color, @button-background-color-hover, @button-background-color-selected, @text-color);
+  color: @text-color-subtle;
+  background: darken(@app-background-color, 2%);
+  background-image: none;
+  font-weight: 500;
+  border-radius: @button-radius;
+  border: none;
+
+  // Get rid of ugly blue border.
+  &:hover, &:active, &:focus {
+    background-image: none;
+    box-shadow: none;
+    outline: 0;
+  }
+
+  &:active, &:focus {
+    color: @text-color-subtle;
+    background: darken(@app-background-color, 2%);
+  }
+
+  &:hover {
+    color: @text-color;
+    background: darken(@background-color-selected, 3%);
+
+    &:active, &:focus {
+      color: @text-color;
+      background: @background-color-selected;
+    }
+
+    &:focus:not(:active) {
+      color: @text-color;
+      background: darken(@background-color-selected, 3%);
+    }
+  }
 }
 
 .btn.btn-primary {

@@ -1,10 +1,17 @@
 @import "ui-variables";
 
-// .find-and-replace {
-//
-//   .btn-group {
-//     display: flex;
-//     flex: 1;
-//     flexDirection: "row";
-//   }
-// }
+.project-find, .find-and-replace {
+  .btn-group > .btn {
+    height: auto;
+    border-radius: @button-radius;
+
+    // HACK: Remove ugly, blue border.
+    background-image: none;
+    box-shadow: none;
+    outline: 0;
+  }
+
+  .find-meta-container {
+    margin-top: 11px;
+  }
+}
