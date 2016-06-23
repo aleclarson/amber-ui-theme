@@ -64,6 +64,14 @@
       background: darken(@background-color-selected, 3%);
     }
   }
+
+  &.selected {
+    background-color: darken(@background-color-selected, 2%);
+
+    &:hover {
+      background-color: @background-color-selected;
+    }
+  }
 }
 
 .btn.btn-primary {

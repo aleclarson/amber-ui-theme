@@ -10,6 +10,7 @@
 
   .list-item {
     opacity: 0.2;
+    transition: opacity 0.2s ease-out;
   }
 
   .entry {
@@ -27,22 +28,25 @@
 
       &.file, &.directory > .header {
         opacity: 0.9;
-        color: @text-color;
         background-color: @background-color-selected;
         border-radius: 4px;
         margin-right: 5px;
         margin-top: 0px;
+
+        & > .name {
+          color: saturate(@text-color, 30%);
+          font-weight: 400;
+        }
       }
 
       &.status-modified {
 
         &.file, &.directory > .header {
-          color: @text-color-modified;
           background-color: @background-color-modified;
-        }
 
-        & > .name {
-          color: inherit;
+          & > .name {
+            color: @text-color-modified;
+          }
         }
       }
 
@@ -70,12 +74,6 @@
 }
 
 .tree-view-resizer .tree-view-resize-handle {
-  opacity: 0;
-  background-color: darken(@app-background-color, 5%);
+  background: none;
   width: 12px;
-  transition: opacity .2s ease-out;
-
-  &:hover, &:active {
-    opacity: 0.15;
-  }
 }
