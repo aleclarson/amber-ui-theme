@@ -2,7 +2,7 @@
 // This defines all syntax variables that syntax themes must implement when they
 // include a syntax-variables.less file.
 
-@app-background-color: #191813;
+@app-background-color: #1C1912; // #191813;
 
 @font-size: 12px;
 @input-font-size: 14px;
@@ -12,24 +12,25 @@
 @text-color-highlight: darken(@text-color, 10%);
 @text-color-selected: lighten(@text-color, 15%);
 
-@text-color-info: #fff;
-@text-color-success: #88F23C;
+@text-color-info: #F2C830;
+@text-color-success: #58DBD5;
 @text-color-warning: #F2CB3C;
 @text-color-error: #F23C3C;
 
 @text-color-ignored: #fff;
-@text-color-added: #FDCC5B;
-@text-color-renamed: #fff;
+@text-color-added: @text-color-success;
 @text-color-modified: #66A4FF;
-@text-color-removed: #fff;
+@text-color-renamed: @text-color-modified;
+@text-color-removed: @text-color-error;
 
-@background-color-info: #fff;
-@background-color-success: #fff;
-@background-color-warning: #fff;
-@background-color-error: #fff;
+@background-color-selected: #473917; // #372C12;
+@background-color-info: #595928;
+@background-color-success: #204F4D;
+@background-color-warning: #594E28;
+@background-color-error: #592424;
 @background-color-highlight: rgba(255, 255, 255, 0.07);
-@background-color-selected: #372C12;
-@background-color-modified: #263D5E;
+@background-color-added: @background-color-success;
+@background-color-modified: #243A59;
 
 @base-background-color: lighten(@tool-panel-background-color, 5%);
 @base-border-color: rgba(0, 0, 0, 0.5);
@@ -51,10 +52,10 @@
 @overlay-background-color: @app-background-color;
 @overlay-border-color: @background-color-highlight;
 
-@button-background-color: #2E2A22;
-@button-background-color-hover: lighten(@button-background-color, 5%);
-@button-background-color-selected: #5c6064;
-@button-border-color: @base-border-color;
+// @button-background-color: #2E2A22;
+// @button-background-color-hover: lighten(@button-background-color, 5%);
+// @button-background-color-selected: #5c6064;
+// @button-border-color: @base-border-color;
 @button-radius: 4px;
 
 @tab-bar-background-color: @app-background-color;

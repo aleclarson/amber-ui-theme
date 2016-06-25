@@ -12,8 +12,9 @@
 atom-panel, .tool-panel {
   .text(normal);
   position: relative;
-  z-index: 5;
+  z-index: 20;
 
+  border: none;
   background-color: @tool-panel-background-color;
 
   // &.bottom, &.panel-bottom,
@@ -21,6 +22,10 @@ atom-panel, .tool-panel {
   //   border-top: 1px solid @tool-panel-border-color;
   //   box-shadow: inset 0 1px 0 @background-color-highlight;
   // }
+
+  .btn-group .btn {
+    border: none;
+  }
 
   &.left, &.panel-left {
     border: none;
@@ -57,12 +62,13 @@ atom-panel, .tool-panel {
   .btn {
     padding-left: 8px;
     padding-right: 8px;
+    border: none;
 
-    @bg: lighten(@button-background-color, 10%);
-    @hover: lighten(@button-background-color-hover, 10%);
-    @selected: lighten(@button-background-color-selected, 10%);
-    @text: lighten(@text-color, 10%);
-    .btn-background(@bg, @hover, @selected, @text);
+    // @bg: lighten(@button-background-color, 10%);
+    // @hover: lighten(@button-background-color-hover, 10%);
+    // @selected: lighten(@button-background-color-selected, 10%);
+    // @text: lighten(@text-color, 10%);
+    // .btn-background(@bg, @hover, @selected, @text);
   }
 }
 

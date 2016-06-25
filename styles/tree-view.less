@@ -39,6 +39,17 @@
         }
       }
 
+      &.status-added {
+
+        &.file, &.directory > .header {
+          background-color: @background-color-added;
+
+          & > .name {
+            color: @text-color-added;
+          }
+        }
+      }
+
       &.status-modified {
 
         &.file, &.directory > .header {

@@ -41,12 +41,12 @@ progress {
   height: @progress-height;
   -webkit-appearance: none;
   border-radius: @component-border-radius;
-  background-color: #666;
-  background-image:
-     -webkit-linear-gradient(-30deg,
-                             transparent 33%, rgba(0, 0, 0, .1) 33%,
-                             rgba(0,0, 0, .1) 66%, transparent 66%),
-                             @progress-shine-gradient;
+  background-color: @background-color-selected;
+  background-image: none;
+    //  -webkit-linear-gradient(-30deg,
+    //                          transparent 33%, rgba(0, 0, 0, .1) 33%,
+    //                          rgba(0,0, 0, .1) 66%, transparent 66%),
+    //                          @progress-shine-gradient;
   border-radius: 2px;
   background-size: 25px @progress-height, 100% 100%, 100% 100%;
   -webkit-animation: animate-stripes 5s linear 6; // stop animation after 6 runs (30s) to limit CPU usage
@@ -58,12 +58,12 @@ progress::-webkit-progress-bar {
 
 progress::-webkit-progress-value {
   border-radius: @component-border-radius;
-  background-image: @progress-shine-gradient;
-  background-color: @background-color-success;
+  background-image: none; // @progress-shine-gradient;
+  background-color: fade(@text-color, 30%);
 }
 
 progress[value] {
-  background-image: @progress-shine-gradient;
+  background-image: none; // @progress-shine-gradient;
   -webkit-animation: none;
 }
 
