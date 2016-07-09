@@ -1,5 +1,4 @@
 @import "ui-variables";
-@tab-bar-padding: 5px;
 @tab-min-width: 100px;
 @tab-max-width: 200px;
 @tab-padding: 0px;
@@ -9,10 +8,9 @@
 
 .tab-bar {
   z-index: 10;
-  height: @tab-height + (@tab-bar-padding * 2);
-  background: @app-background-color;
-  padding: 5px;
-  margin-top: 5px;
+  height: @tab-bar-height;
+  padding: @tab-bar-padding;
+  background: @tab-bar-background-color;
   overflow-x: auto;
   overflow-y: hidden;
 
@@ -36,15 +34,14 @@
     right: 0;
     border: none;
     pointer-events: none;
-    background-color: @app-background-color;
   }
 
   .placeholder {
-    height: @tab-height + @tab-bar-padding; // + @tab-bottom-border-height;
+    height: @tab-height;
     margin-left: -9px; // center between tabs
     pointer-events: none;
     &:after {
-      top: @tab-height + @tab-bar-padding - 2px; // + @tab-bottom-border-height - 2px;
+      top: @tab-height - 2px;
     }
   }
 }
